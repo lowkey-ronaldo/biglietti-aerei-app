@@ -2,6 +2,8 @@ import { useContext, useState} from "react";
 import { UsersContext } from "../../contexts/users.context";
 import { useNavigate } from "react-router-dom";
 
+import './login.css';
+
 const Login = () => {
 
   const navigate = useNavigate();
@@ -17,12 +19,14 @@ const Login = () => {
   };
 
   return (
-    <div>
+
+    <div className="login-container">
       <form onSubmit={checkUserHandler}>
         <input type="password" placeholder="Inserisci password" onChange={(e) => setInput(e.target.value)}/>
         <button type="submit">Login</button>
       </form>
     </div>
+
   );
 };
 
