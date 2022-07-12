@@ -12,10 +12,8 @@ const Checkout = () => {
 
     return (
         <div className='checkout-container' >
+            
             <div className='checkout-header' >
-                {/* <div className='header-block' >
-                    <span>Prodotti</span>
-                </div> */}
                 <div className='header-block' >
                     <span>Nominativo</span>
                 </div>

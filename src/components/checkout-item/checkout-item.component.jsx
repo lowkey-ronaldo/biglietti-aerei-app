@@ -1,6 +1,7 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { CartContext } from '../../contexts/cart.context';
+import {UsersContext} from '../../contexts/users.context'
 
 import './checkout-item.style.scss';
 
@@ -8,19 +9,15 @@ import './checkout-item.style.scss';
 
 const CheckoutItem = ({ cartItem }) => {
   
-  const { citta,
-          imageUrl,
-          price, 
+  const { price, 
           quantity, 
           dataPart,
           oraPart,
           aeroportoPart,
           aeroportoArr,
+          postiTot
         } = cartItem;
 
-  if(quantity ){
-    alert("Fine posti");
-  }
 
   const { clearItemFromCart, addItemToCart, removeItemFromCart } = useContext(CartContext);
 
@@ -28,13 +25,11 @@ const CheckoutItem = ({ cartItem }) => {
   const addItemHandler = () => addItemToCart(cartItem);
   const removeItemHandler = () => removeItemFromCart(cartItem);
 
+
   return (
     <div className='checkout-item-container'>
       
-      {/* <div className='image-container'>
-        <img src={imageUrl} alt={`${citta}`} />
-      </div> */}
-      <span className='name'> {`${localStorage.getItem("loggedUser")}`} </span>
+      <span className='name'> {`${localStorage.getItem("loggedUser")} ${localStorage.getItem("cognomeUser")}`} </span>
       <span className='quantity'>
         <div className='arrow' onClick={removeItemHandler}>
           &#10094;
@@ -52,6 +47,7 @@ const CheckoutItem = ({ cartItem }) => {
       <div className='remove-button' onClick={clearItemHandler}>
         &#10005;
       </div>
+
     </div>
   );
 };

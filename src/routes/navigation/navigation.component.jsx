@@ -23,6 +23,7 @@ const Navigation = () => {
     localStorage.removeItem("isLogged");
     localStorage.removeItem("cartItems");
     localStorage.removeItem("loggedUser");
+    localStorage.removeItem("cognomeUser");
     localStorage.removeItem("id");
     navigate("/login");
   };
@@ -37,7 +38,8 @@ const Navigation = () => {
       <div className="navigation">
         {isLogged && (
           <Fragment>
-            <div className="loggedUser">{loggedUser}</div>
+
+            <div className="loggedUser"><h4>{`Logged as :  ${loggedUser}`}</h4></div>
 
             <div className="nav-links-container">
 

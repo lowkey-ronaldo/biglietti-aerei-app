@@ -41,6 +41,7 @@ export const UsersProvider = ({ children }) => {
       setIsLogged(true);
       localStorage.setItem("isLogged", true);
       localStorage.setItem("loggedUser", user.nome)
+      localStorage.setItem("cognomeUser", user.cognome)
     } 
     else{
       alert("Codice cliente sbagliato")

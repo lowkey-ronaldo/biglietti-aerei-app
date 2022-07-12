@@ -8,6 +8,9 @@ import Login from "./routes/login/Login";
 import Voli from "./routes/voli/voli.component";
 import Checkout from "./routes/checkout/checkout.component";
 
+import './App.css'
+import Descrizione from "./routes/descrizione/descrizione";
+
 const App = () => {
   const navigate = useNavigate();
 
@@ -25,7 +28,7 @@ const App = () => {
         <Route path="login" element={<Login />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="*" element={<Home />} />
-        <Route path = '*' element={<Home/>} />
+        <Route path = 'descrizione' element={<Descrizione/>} />
       </Route>
     </Routes>
   );

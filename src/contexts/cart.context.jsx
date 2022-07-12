@@ -8,23 +8,16 @@ const addCartItem = (cartItems, productToAdd) => {
     // Se trovato, incrementa la quantità
     if (existingCartItem) {
         return cartItems.map((cartItem) =>{
-            // return(
-                //     cartItem.id === productToAdd.id
-
-                
-                // ? { ...cartItem, quantity: cartItem.quantity + 1 }
-                // : cartItem
                 if(cartItem.id === productToAdd.id){
                     if(cartItem.quantity < cartItem.postiTot){
                             return { ...cartItem, quantity: cartItem.quantity +1}
                     } else{
+                        alert("Fine posti");
                         return { ...cartItem, quantity: cartItem.quantity}
                     }
                 } else{
                     return cartItem;
                 }
-                
-                // )
             }
         );
     }
